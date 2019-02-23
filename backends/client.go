@@ -2,6 +2,7 @@ package backends
 
 import (
 	"errors"
+	"github.com/kelseyhightower/confd/backends/apollo"
 	"strings"
 
 	"github.com/kelseyhightower/confd/backends/consul"
@@ -85,6 +86,8 @@ func New(config Config) (StoreClient, error) {
 		return dynamodb.NewDynamoDBClient(table)
 	case "ssm":
 		return ssm.New()
+	case "apollo":
+		return apollo.NewApolloClient(config.BackendNodes, config.AppID, config.Cluster, config.Namespace)
 	}
 	return nil, errors.New("Invalid backend")
 }
