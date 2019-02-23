@@ -6,8 +6,12 @@
 
 * keeping local configuration files up-to-date using data stored in [etcd](https://github.com/coreos/etcd),
   [consul](http://consul.io), [dynamodb](http://aws.amazon.com/dynamodb/), [redis](http://redis.io),
-  [vault](https://vaultproject.io), [zookeeper](https://zookeeper.apache.org), [aws ssm parameter store](https://aws.amazon.com/ec2/systems-manager/) or env vars and processing [template resources](docs/template-resources.md).
+  [vault](https://vaultproject.io), [zookeeper](https://zookeeper.apache.org), [aws ssm parameter store](https://aws.amazon.com/ec2/systems-manager/)，[Apollo](https://github.com/ctripcorp/apollo) or env vars and processing [template resources](docs/template-resources.md).
 * reloading applications to pick up new config file changes
+
+## 新增加了apollo支持
+./confd -confdir="./" -config-file="./conf.d/test.toml" -interval=5 -backend=apollo -node http://127.0.0.1:8080 -app-id abcde
+
 
 ## Community
 
@@ -42,3 +46,4 @@ Before we begin be sure to [download and install confd](docs/installation.md).
 ## Next steps
 
 Check out the [docs directory](docs) for more docs.
+
