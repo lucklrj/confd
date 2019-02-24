@@ -10,7 +10,7 @@
 * reloading applications to pick up new config file changes
 
 ## 新增加了apollo支持
-./confd -confdir="./" -config-file="./conf.d/test.toml" -interval=5 -backend=apollo -node http://127.0.0.1:8080 -app-id abcde
+./confd -confdir="./" -config-file="./conf.d/test.toml" -interval=5 -backend=apollo -node http://127.0.0.1:8080 -app-id abcde -cluster default -namespace namespace
 
 
 ## Community
